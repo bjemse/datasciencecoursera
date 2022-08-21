@@ -3,6 +3,7 @@ dframe1 <- read.csv("household_power_consumption.txt", na.strings = "?", sep = "
 #creating plot4
 x <-as.Date(dframe1$Date, tryFormats="%d/%m/%Y")
 df <- subset(dframe1,x=="2007-02-02"| x=="2007-02-01")
+png("plot4.png")
 #creating plot4
         par(mfrow=c(2,2))
         #plot global active pover 1
@@ -23,6 +24,6 @@ df <- subset(dframe1,x=="2007-02-02"| x=="2007-02-01")
         axis(side=1, at=c(0,1440, 2880), labels=c("Thursday", "Friday", "Saturday"))
         axis(side=2, at=c(0.1,0.3,0.5), labels=c(0.1, 0.3, 0.5))
 #copying plot to png file
-png("plot4.png")
-dev.copy(png, file="plot4.png")
+
+#dev.copy(png, file="plot4.png")
 dev.off()
